@@ -27,6 +27,6 @@ export class UserService {
   }
   findAllUser() {
     const headers = new HttpHeaders();
-    return this.http.get('', {headers: headers});
+    return this.http.get('http://192.168.43.175:8080/user', {headers: headers});
   }
 }
