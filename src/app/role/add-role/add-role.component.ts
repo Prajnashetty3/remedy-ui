@@ -14,7 +14,7 @@ export class AddRoleComponent implements OnInit {
 
   ngOnInit() {
     this.roleForm = this.formBuilder.group({
-      'rolename': ['', [Validators.required, Validators.maxLength(40)]],
+      'fullname': ['', [Validators.required, Validators.maxLength(40)]],
       'roleid': ['', [Validators.required, Validators.maxLength(40)]]
     });
   }

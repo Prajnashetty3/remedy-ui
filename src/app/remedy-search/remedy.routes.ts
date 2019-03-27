@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AddUserComponent } from './add-user/add-user.component';
-import {UserDashboardComponent} from './user-dashboard/user-dashboard.component';
+import {RemedySearchComponent} from './remedy-search.component';
 
 const routes: Routes = [
-  { path: 'add', component: AddUserComponent},
-  { path: '', component: UserDashboardComponent}
+  { path: '', component: RemedySearchComponent}
 
 ];
 
@@ -13,4 +11,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class UserRoutingModule { }
+export class RemedyRoutingModule { }

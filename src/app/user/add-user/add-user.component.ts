@@ -36,7 +36,6 @@ export class AddUserComponent implements OnInit {
     });
   }
   onSubmit() {
-    debugger
     this.submitted = true;
     if (this.userForm.invalid) {
       return;
