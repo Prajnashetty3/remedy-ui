@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {User} from './models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,6 @@ export class UserService {
   }
   findAllUser() {
     const headers = new HttpHeaders();
-    return this.http.get('http://192.168.43.175:8080/user', {headers: headers});
+    return this.http.get<Array<User>>('http://192.168.43.175:8080/user', {headers: headers});
   }
 }

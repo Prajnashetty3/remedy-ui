@@ -1,7 +1,8 @@
-.tab {
-  margin-left: 50px;
-  position: relative;
-}
 table, th, td {
   border: 1px solid black;
+
+}
+.tab{
+  margin-left: 50px;
+
 }

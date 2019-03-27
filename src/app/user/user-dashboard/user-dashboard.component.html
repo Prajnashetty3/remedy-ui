@@ -1,3 +1,44 @@
-<p>
-  user-dashboard works!
-</p>
+<div class="row">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="title">User</h5>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive ps" >
+        <table class="table" style="width:100%">
+          <tr>
+            <td>User Name</td>
+            <td>Full Name</td>
+            <td>Department</td>
+            <td>Manager</td>
+            <td>Role Id</td>
+            <td>Active</td>
+            <td>Create Date</td>
+            <td>Update Date</td>
+            <td>Password</td>
+          </tr>
+          <tr *ngFor = "let user of allUsers">
+            <td>{{user.username}}</td>
+            <td>{{user.fullname}}</td>
+            <td>{{user.department}}</td>
+            <td>{{user.manager}}</td>
+            <td>{{user.roleid}}</td>
+            <td>{{user.active}}</td>
+            <td>{{user.createDate}}</td>
+            <td>{{user.updateDate}}</td>
+            <td>{{user.password}}</td>
+            <td><button type="submit" class="btn btn-fill btn-primary">Edit</button></td>
+            <td><button type="submit" class="btn btn-fill btn-primary">Delete</button></td>
+          </tr>
+        </table>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a routerLink="add" class="btn btn-fill btn-primary"> Add New User</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+</div>

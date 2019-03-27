@@ -1829,7 +1829,7 @@ pre code {
 }
 
 .table-responsive>.table-bordered {
-  border: 0;
+  border: 1px;
 }
 
 .form-control {
@@ -17264,7 +17264,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .card .card-body {
-  padding-left: 250px;
+  padding-left: 50px;
 }
 
 .card .card-body.table-full-width {
@@ -17497,7 +17497,7 @@ Copyright (c) 2015 Daniel Eden
 .card .card-footer {
   background-color: transparent;
   border: 0;
-  padding-left: 150px;
+  padding-left: 500px;
 }
 
 .card .card-footer .stats i {
