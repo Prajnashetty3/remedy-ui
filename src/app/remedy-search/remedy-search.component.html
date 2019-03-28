@@ -1,41 +1,50 @@
 
-<div class="row">
-  <div class="col-md-8">
     <div class="card">
       <div class="card-header">
         <h5 class="title">Remedy Search</h5>
       </div>
       <div class="card-body">
         <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-md-6">
           <select formControlName="field" class="form-control" >
-            <option *ngFor="let field of fields"  [value]="field.name"
+            <option *ngFor="let field of fields"  [value]="field.id"
                     class="form-control1" >
               {{field.name}}
             </option>
           </select>
-          <input type="text" class="form-control" formControlName="searchby" >
-          <button type="submit" class="btn btn-fill btn-primary">Search</button>
+          </div>
+            <div class="col-md-6"><input type="text" class="form-control" formControlName="searchby" /></div>
+            <div class="col-md-6"><button type="submit" class="btn btn-fill btn-primary">Search</button></div>
+          </div>
         </form>
-
       </div>
       <div class="card-footer">
       </div>
     </div>
-  </div>
-</div>
+
 <div class="row">
   <div class="col-md-8">
     <div class="card">
       <div class="card-header">
-        <h5 class="title">Pending Tickets</h5>
+        <h5 class="title">Resolved Tickets</h5>
         </div>
       <div class="card-body">
         <table class="table" style="width:100%">
           <tr>
-            <td>User Name</td>
+            <td>Corp_id</td>
+            <td>RFC_id</td>
+            <td>Priority</td>
+            <td>Domain</td>
+            <td>Resolver Group</td>
           </tr>
-          <tr>
-            <td>{{}}</td>
+          <tr *ngFor = "let field of allFields">
+            <td>{{field.Corp_ID}}</td>
+            <td>{{field.RFC_ID}}</td>
+            <td>{{field.Priority}}</td>
+            <td>{{field.Domain}}</td>
+            <td>{{field.ResolverGroup}}</td>
+            <td><button type="submit" class="btn btn-fill btn-primary">Details</button></td>
           </tr>
         </table>
       </div>
