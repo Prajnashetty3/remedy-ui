@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {RemedySearchComponent} from './remedy-search.component';
+import {RemedyComponent} from './remedy.component';
 
 const routes: Routes = [
-  { path: '', component: RemedySearchComponent}
-
+  { path: '', component: RemedyComponent}
 ];
 
 @NgModule({
