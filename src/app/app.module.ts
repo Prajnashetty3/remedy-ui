@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import {SidenavsearchComponent} from './sidenavsearch/sidenavsearch.component';
+import {NavbarComponent} from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
-    LoginComponent
+    LoginComponent,
+    SidenavsearchComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

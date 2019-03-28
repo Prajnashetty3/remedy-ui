@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {LoginServiceService} from './login-service.service';
+import {LoginRoutesModule} from './login-routes.module';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +11,9 @@ import {LoginServiceService} from './login-service.service';
 export class LoginComponent implements OnInit {
   submitted = false;
   loginForm: FormGroup;
+  nav = false;
 
-  constructor(private formBuilder: FormBuilder, private loginService: LoginServiceService) {
+  constructor(private formBuilder: FormBuilder, private loginService: LoginServiceService, private routes: LoginRoutesModule) {
   }
 
   ngOnInit() {
@@ -25,9 +27,8 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-  }}
- /*   this.loginService.login(this.loginForm.value).subscribe(data => {
-    });
-    });
+  this.loginService.login(this.loginForm.value).subscribe(data => {
+    this.nav = true;
+    }, error1 => {this.nav = false; });
+    }
   }
-}*/
