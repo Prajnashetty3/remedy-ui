@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {LoginServiceService} from './login-service.service';
-import {LoginRoutesModule} from './login-routes.module';
-
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,15 +10,14 @@ import {LoginRoutesModule} from './login-routes.module';
 export class LoginComponent implements OnInit {
   submitted = false;
   loginForm: FormGroup;
-  nav = false;
 
-  constructor(private formBuilder: FormBuilder, private loginService: LoginServiceService, private routes: LoginRoutesModule) {
+  constructor(private formBuilder: FormBuilder, private loginService: LoginServiceService, private router: Router) {
   }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      'username': ['', [Validators.required, Validators.email, Validators.maxLength(50)]],
-      'password': ['', [Validators.required, Validators.minLength(6), Validators.maxLength(10)]]
+      'username': ['', [Validators.required, Validators.maxLength(50)]],
+      'password': ['', [Validators.required, Validators.maxLength(20)]]
     });
   }
   onSubmit() {
@@ -28,7 +26,8 @@ export class LoginComponent implements OnInit {
       return;
     }
   this.loginService.login(this.loginForm.value).subscribe(data => {
-    this.nav = true;
-    }, error1 => {this.nav = false; });
+    debugger
+    this.router.navigate(['/remedy/']);
+    }, error1 => {});
     }
   }

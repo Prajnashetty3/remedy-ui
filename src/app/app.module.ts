@@ -8,6 +8,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import {SidenavsearchComponent} from './sidenavsearch/sidenavsearch.component';
 import {NavbarComponent} from './navbar/navbar.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {NavbarComponent} from './navbar/navbar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

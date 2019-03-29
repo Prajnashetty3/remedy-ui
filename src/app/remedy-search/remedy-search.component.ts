@@ -4,7 +4,7 @@ import {RemedyServiceService} from './remedy-service.service';
 import { Remedy } from './remedy-models/remedy';
 
 export interface Fields {
-  id: number;
+  id: string;
   name: string;
 }
 
@@ -19,12 +19,12 @@ export class RemedySearchComponent implements OnInit {
   searchForm: FormGroup;
   submitted = false;
   fields: Fields[] = [
-    {id: 1, name: 'Corp_id'},
-    {id: 2, name: 'RFC_id'},
-    {id: 3, name: 'Priority'},
-    {id: 4, name: 'Domain'},
-    {id: 5, name: 'Resolver Group'},
-    {id: 6, name: 'Solution Type'}
+    {id: 'corp', name: 'Corp_id'},
+    {id: 'rca', name: 'RFC_id'},
+    {id: '', name: 'Priority'},
+    {id: '', name: 'Domain'},
+    {id: '', name: 'Resolver Group'},
+    {id: '', name: 'Solution Type'}
   ];
 
   ngOnInit() {
@@ -39,7 +39,7 @@ export class RemedySearchComponent implements OnInit {
       return;
     }
     this.remedyService.searchRemedy(this.searchForm.value).subscribe(data => {
-      console.log(data);
+      this.allFields = data;
     });
   }
 }

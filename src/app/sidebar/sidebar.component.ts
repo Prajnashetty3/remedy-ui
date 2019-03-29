@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
+  isLogin;
   constructor() { }
 
   ngOnInit() {
+    document.location.href.indexOf('login') === -1 ? this.isLogin = false : this.isLogin = true;
+debugger
   }
 
 }

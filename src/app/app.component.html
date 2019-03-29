@@ -2,8 +2,8 @@
   <app-login></app-login>
 </div>-->
 <div class="wrapper">
-  <app-navbar></app-navbar>
-  <app-sidenavsearch></app-sidenavsearch>
+  <app-navbar *ngIf="!isLogin"></app-navbar>
+  <app-sidenavsearch *ngIf="!isLogin"></app-sidenavsearch>
   <!--<app-sidebar></app-sidebar>-->
   <div class="main-panel">
     <div class="content">
