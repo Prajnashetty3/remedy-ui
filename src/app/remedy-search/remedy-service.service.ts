@@ -12,6 +12,7 @@ export class RemedyServiceService {
 
   searchRemedy(value) {
     const headers = new HttpHeaders();
-    return this.http.get<Array<Remedy>>('http://192.168.43.175:8080/remedy/' + value.field + '/' + value.searchby,  {headers: headers});
+     return this.http.get<Array<Remedy>>('http://192.168.43.175:8090/remedy/' + value.field + '/' + value.searchby,  {headers: headers});
+    // return this.http.get<any>('http://192.168.43.175:8090/remedy/' + value.field + '/' + value.searchby,  {headers: headers});
   }
 }

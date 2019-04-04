@@ -7,13 +7,12 @@ export class Remedy {
   public TicketType: String;
   public DaysOpen: String;
   public ModifiedDate: String;
-  public Corp_ID: String;
-  public RFC_ID: String;
+  public corpId: String;
+  public referenceId: String;
   public TicketStatus: String;
   public RFCStatus: String;
-  public Priority: String;
-  public Domain: String;
-  public ResolverGroup: String;
+  public priority: String;
+  public resolverGroup: String;
   public Summary: String;
   public CreateDate: String;
   public PlanDate: String;

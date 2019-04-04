@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {RemedyServiceService} from './remedy-service.service';
 import { Remedy } from './remedy-models/remedy';
+import {Router} from '@angular/router';
 
 export interface Fields {
   id: string;
@@ -15,7 +16,7 @@ export interface Fields {
 })
 export class RemedySearchComponent implements OnInit {
   allFields: Array<Remedy> = [];
-  constructor(private formBuilder: FormBuilder, private remedyService: RemedyServiceService) { }
+  constructor(private formBuilder: FormBuilder, private remedyService: RemedyServiceService, private route: Router) { }
   searchForm: FormGroup;
   submitted = false;
   fields: Fields[] = [
@@ -41,5 +42,8 @@ export class RemedySearchComponent implements OnInit {
     this.remedyService.searchRemedy(this.searchForm.value).subscribe(data => {
       this.allFields = data;
     });
+  }
+  nav(corpId) {
+    this.route.navigate(Array('/detail?id=' + corpId));
   }
 }

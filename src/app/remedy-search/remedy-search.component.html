@@ -8,7 +8,7 @@
           <div class="row">
             <div class="col-md-6">
           <select formControlName="field" class="form-control" >
-            <option *ngFor="let field of fields"  [value]="field.id"
+            <option *ngFor="let field of fields"  [value]="field.name"
                     class="form-control1" >
               {{field.name}}
             </option>
@@ -35,16 +35,15 @@
             <td>Corp_id</td>
             <td>RFC_id</td>
             <td>Priority</td>
-            <td>Domain</td>
             <td>Resolver Group</td>
+            <td> </td>
           </tr>
-          <tr *ngFor = "let field of allFields">
-            <td>{{field.Corp_ID}}</td>
-            <td>{{field.RFC_ID}}</td>
-            <td>{{field.Priority}}</td>
-            <td>{{field.Domain}}</td>
-            <td>{{field.ResolverGroup}}</td>
-            <td><button type="submit" class="btn btn-fill btn-primary">Details</button></td>
+          <tr *ngFor = "let field of allFields[0]">
+            <td>{{field.corpId}}</td>
+            <td>{{field.referenceId}}</td>
+            <td>{{field.priority}}</td>
+            <td>{{field.resolverGroup}}</td>
+            <td><span (click)="nav(field.corpId)" class="btn btn-fill btn-primary" >Details</span></td>
           </tr>
         </table>
       </div>
